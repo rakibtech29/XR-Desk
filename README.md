@@ -4,9 +4,16 @@
 
 XR Desk shows your Android phone on your Windows PC. Mirror the whole screen, or open each app in its own window, and use your mouse and keyboard. No root, no app to install on the phone: it works over USB debugging.
 
-> **Status: preview (v3.5.0).** The program works, but there is no installer yet and some buttons are marked *Coming soon*. See the [Releases](../../releases) page for downloads when they are published.
+> **Status: preview (v3.5.0).** The program works; some buttons are marked *Coming soon*. **Download the installer from the [Releases](../../releases/latest) page** (`XRDesk-Setup-3.5.0.exe`).
 
 ![XR Desk main window](docs/screenshots/main-window.png)
+
+## Install
+1. Download `XRDesk-Setup-<version>.exe` from [Releases](../../releases/latest). Next to it is a `.sha256` file: you can compare it with `Get-FileHash .\XRDesk-Setup-3.5.0.exe -Algorithm SHA256`.
+2. Run it. It installs for your user only (no administrator needed) and puts a shortcut in the Start Menu. Everything XR Desk needs (adb, the scrcpy server, Qt, FFmpeg) is inside, nothing else to install.
+3. Uninstall it from *Settings > Apps* like any program.
+
+The installer is not code-signed yet, so Windows SmartScreen may warn: *More info > Run anyway* (only for the file from this page).
 
 ## What it can do today
 
@@ -33,11 +40,17 @@ XR Desk shows your Android phone on your Windows PC. Mirror the whole screen, or
 - *Sound* sends the phone's sound to the PC. It is really switched on and off on the phone: when it is off, the phone captures nothing.
 - *Device Sound* (main window) switches the phone's own speaker on or off, independent of the PC sound.
 
+**Free version**
+- Up to **3 app windows** at the same time for one phone. A fourth app stays on the phone and a popup says so: close an app window to make room. Premium will remove the limit (coming soon).
+
+**Update Check**
+- The *Update Check* button opens a small window: it checks this page for a newer version and, if there is one, asks *Download?*. The download shows the percent, how much of the total is done and the speed, then checks the file against its SHA-256. The installer is saved in your Downloads folder; you start it yourself.
+
 **Logs**
 - The Logs card at the bottom shows what XR Desk does (phones found, windows opened and closed, errors in red). *Copy all* and *Clear* are there.
 
 ## Coming soon
-Update Check, Install XR Desk APK, Get Premium, and the advanced features: Check Device Status, Setup Device, Unlock Screen, Show Screen, Launch Cloner, Launch 2nd Space.
+Install XR Desk APK, Get Premium, and the advanced features: Check Device Status, Setup Device, Unlock Screen, Show Screen, Launch Cloner, Launch 2nd Space.
 
 ## Connect your phone
 
@@ -62,7 +75,7 @@ Update Check, Install XR Desk APK, Get Premium, and the advanced features: Check
 - USB only for now (no Wi-Fi connection).
 
 ## Updates
-New versions are published on the [Releases](../../releases) page. The *Update Check* button will use it to tell you when a newer version is available. See [CHANGELOG.md](CHANGELOG.md) for what changed.
+New versions are published on the [Releases](../../releases) page. The *Update Check* button in XR Desk uses it to tell you when a newer version is available. See [CHANGELOG.md](CHANGELOG.md) for what changed.
 
 ## Credits
 XR Desk uses open-source software: scrcpy (server part, Apache-2.0), Android platform-tools (adb), Qt 6 (LGPLv3) and FFmpeg (LGPL). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). XR Desk is not affiliated with these projects.
